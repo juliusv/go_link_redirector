@@ -1,0 +1,38 @@
+<%= form_tag(new_link_path, method: 'get') do %>
+  <button type="submit" class="btn btn-primary">New Link</button>
+<% end %>
+
+<%= will_paginate @links %>
+
+<form class="form-search">
+  <input name="search_query" type="text" class="input-large search-query">
+  <button type="submit" class="btn">Search</button>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Short name</th>
+      <th>Url</th>
+      <th>Comments</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @links.each do |link| %>
+      <tr>
+        <td><%= link.short_name %></td>
+        <td><%= link_to link.url, link.url %></td>
+        <td><%= link.comments %></td>
+        <td><%= link_to 'Details', link %></td>
+        <td><%= link_to 'Edit', edit_link_path(link) %></td>
+        <td><%= link_to 'Delete', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @links %>

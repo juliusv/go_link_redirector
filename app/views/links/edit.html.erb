@@ -1,0 +1,25 @@
+<h1>Edit Link</h1>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@link) do |f| %>
+      <%= render 'error_messages' %>
+
+      <%= f.label :short_name %>
+      <%= f.text_field :short_name %>
+
+      <%= f.label :url %>
+      <%= f.text_field :url %>
+
+      <%= f.label :comments %>
+      <%= f.text_field :comments %>
+
+      <%= f.label :owner_email %>
+      <%= f.text_field :owner_email %>
+
+      <%= f.submit 'Save Changes', class: 'btn btn-large btn-primary' %>
+    <% end %>
+    <div class="center">
+      <%= link_to 'All Links', root_url %>
+    </div>
+  </div>
+</div>

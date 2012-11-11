@@ -1,0 +1,21 @@
+defaults: &defaults
+  organization_domain: 'myorganization.com'
+  organization_name: 'MyOrganization'
+  short_name_max_length: 40
+  url_max_length: 500
+  comments_max_length: 100
+  contact_email: 'techsupport@myorganization.com'
+  google_oauth2:
+    client_id: 'DUMMY_CLIENT_ID'
+    client_secret: 'DUMMY_CLIENT_SECRET'
+  
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+  organization_domain: 'example.org'
+
+production:
+  <<: *defaults

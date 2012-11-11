@@ -1,0 +1,16 @@
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "#{APP_CONFIG['organization_name']} Go", root_path, id: 'logo' %>
+      <nav>
+        <ul class="nav pull-right">
+          <% if signed_in? %>
+            <li><%= link_to 'Sign out', signout_path, method: 'delete' %></li>
+          <% else %>
+            <li><%= link_to 'Sign in', '/auth/google_oauth2' %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
