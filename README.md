@@ -15,6 +15,10 @@ any link.
   * searchable overview of all links in system
   * tracking of link owners and of the last person to change a link
 
+## Screenshot
+
+![Go Link Redirector Screenshot](http://juliusv.com/go_link_redirector_screenshot.png)
+
 ## Installation
 
 ### Creating Your Google Apps Client Application Credentials.
