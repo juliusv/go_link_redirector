@@ -2,7 +2,7 @@ class Link < ActiveRecord::Base
   attr_accessible :short_name, :url, :comments, :owner_email
   self.per_page = 30
 
-  RESERVED_SHORT_NAMES = %w{links signin signout auth about home contact}
+  RESERVED_SHORT_NAMES = %w{links signin signout auth about home contact assets public int}
 
   VALID_SHORT_NAME_REGEX = /\A[a-z\d\-_]+\z/i
   VALID_URL_REGEX = /\A(http|https):\/\//i
