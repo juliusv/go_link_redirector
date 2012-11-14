@@ -9,7 +9,7 @@ class Link < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :short_name, presence: true,
-                         uniqueness: true,
+                         uniqueness: { case_sensitive: false },
                          length: { maximum: APP_CONFIG['short_name_max_length'] || 40 },
                          format: { with: VALID_SHORT_NAME_REGEX },
                          exclusion: { in: RESERVED_SHORT_NAMES,
