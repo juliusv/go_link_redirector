@@ -99,9 +99,13 @@ class LinksController < ApplicationController
   end
 
   def redirect
-    link = Link.find_by_short_name(params[:link])
+    match = request.fullpath.match /([^\/?]+)(.*)/
+    short_name = match[1]
+    path_args = match[2]
+
+    link = Link.find_by_short_name(short_name)
     if link
-      redirect_to link.url
+      redirect_to link.url + '/' + path_args
     else
       redirect_to root_url, :flash => { :error => 'Link not found!' }
     end
