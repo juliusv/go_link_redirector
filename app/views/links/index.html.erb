@@ -25,8 +25,8 @@
     <% @links.each do |link| %>
       <tr>
         <td><%= link.short_name %></td>
-        <td><%= link_to link.url, link.url %></td>
-        <td><%= link.comments %></td>
+        <td><%= link_to truncate(link.url, length: APP_CONFIG['index_view']['url_max_length'] || 80), link.url %></td>
+        <td><%= truncate(link.comments, length: APP_CONFIG['index_view']['comments_max_length'] || 80) %></td>
         <td><%= link_to 'Details', link %></td>
         <td><%= link_to 'Edit', edit_link_path(link) %></td>
         <td><%= link_to 'Delete', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>

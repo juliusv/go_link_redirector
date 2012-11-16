@@ -5,6 +5,9 @@ defaults: &defaults
   url_max_length: 500
   comments_max_length: 100
   contact_email: 'techsupport@myorganization.com'
+  index_view:
+    url_max_length: 100
+    comments_max_length: 50
   google_oauth2:
     client_id: 'DUMMY_CLIENT_ID'
     client_secret: 'DUMMY_CLIENT_SECRET'
