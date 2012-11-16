@@ -105,6 +105,7 @@ class LinksController < ApplicationController
 
     link = Link.find_by_short_name(short_name)
     if link
+      Link.increment_counter(:views, link.id)
       redirect_to link.url + path_args
     else
       redirect_to root_url, :flash => { :error => 'Link not found!' }

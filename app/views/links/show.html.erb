@@ -5,31 +5,35 @@
       <tr>
         <th>Short name</th>
         <td><%= @link.short_name %></td>
-      </tr> 
+      </tr>
       <tr>
         <th>Url</th>
         <td><a href="<%= @link.url %>"><%= @link.url %></a></td>
-      </tr> 
+      </tr>
       <tr>
         <th>Comments</th>
         <td><%= @link.comments %></td>
-      </tr> 
+      </tr>
       <tr>
         <th>Owner</th>
         <td><%= @link.owner_email %></td>
-      </tr> 
+      </tr>
       <tr>
         <th>Last Changed By</th>
         <td><%= @link.last_change_email %></td>
-      </tr> 
+      </tr>
       <tr>
         <th>Created</th>
         <td><%= @link.created_at %></td>
-      </tr> 
+      </tr>
       <tr>
         <th>Updated</th>
         <td><%= @link.updated_at %></td>
-      </tr> 
+      </tr>
+      <tr>
+        <th>Total views</th>
+        <td><%= @link.views %></td>
+      </tr>
     </table>
     <div class="center">
       <%= link_to 'Edit Link', edit_link_path(@link) %>
