@@ -2,7 +2,7 @@ defaults: &defaults
   organization_domain: 'myorganization.com'
   organization_name: 'MyOrganization'
   short_name_max_length: 40
-  url_max_length: 500
+  url_max_length: 4096
   comments_max_length: 100
   contact_email: 'techsupport@myorganization.com'
   index_view:
