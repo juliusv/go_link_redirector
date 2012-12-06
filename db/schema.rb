@@ -11,17 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121116004712) do
+ActiveRecord::Schema.define(:version => 20121206173627) do
 
   create_table "links", :force => true do |t|
     t.string   "short_name"
-    t.string   "url"
-    t.string   "comments"
+    t.text     "url"
+    t.text     "comments"
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
     t.string   "owner_email"
     t.string   "last_change_email"
-    t.integer  "total_views"
     t.integer  "views",             :default => 0
   end
 
