@@ -19,6 +19,11 @@ gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'rb-readline'
+end
+
+group :development, :test, :migration do
+  gem 'sqlite3'
 end
 
 group :test do
