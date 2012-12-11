@@ -7,5 +7,5 @@ require 'omniauth-google-oauth2'
 
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :google_oauth2, APP_ID, APP_SECRET,
-    { access_type: 'offline', approval_prompt: '' }
+    { access_type: 'online', scope: 'https://www.googleapis.com/auth/userinfo.email', approval_prompt: '' }
 end
