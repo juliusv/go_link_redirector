@@ -72,14 +72,14 @@ footer {
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
   color: $grayLight;
-  a { 
+  a {
     color: $gray;
-    &:hover { 
+    &:hover {
       color: $grayDarker;
-    }   
-  }   
-  small { 
-    float: left; 
+    }
+  }
+  small {
+    float: left;
   }
   ul {
     float: right;
@@ -87,7 +87,7 @@ footer {
     li {
       float: left;
       margin-left: 10px;
-    }   
+    }
   }
 }
 
@@ -123,4 +123,8 @@ input, textarea, select, .uneditable-input {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+}
+
+.url_text {
+  word-break: break-word;
 }

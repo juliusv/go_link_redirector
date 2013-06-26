@@ -23,9 +23,14 @@
 
   <tbody>
     <% @links.each do |link| %>
+      <% if url_max_length = APP_CONFIG['index_view']['url_max_length'] %>
+        <% url_text = truncate(link.url, length: url_max_length) %>
+      <% else %>
+        <% url_text = link.url %>
+      <% end %>
       <tr>
         <td><%= link.short_name %></td>
-        <td><%= link_to truncate(link.url, length: APP_CONFIG['index_view']['url_max_length'] || 80), link.url %></td>
+        <td><%= link_to url_text, link.url, class: "url_text" %></td>
         <td><%= truncate(link.comments, length: APP_CONFIG['index_view']['comments_max_length'] || 80) %></td>
         <td><%= link_to 'Details', link %></td>
         <td><%= link_to 'Edit', edit_link_path(link) %></td>
