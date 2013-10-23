@@ -39,7 +39,7 @@ class LinksController < ApplicationController
   # GET /links/new
   # GET /links/new.json
   def new
-    @link = Link.new(:owner_email => current_user_email)
+    @link = Link.new(:owner_email => current_user_email, :short_name => params[:short_name])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -108,7 +108,7 @@ class LinksController < ApplicationController
       Link.increment_counter(:views, link.id)
       redirect_to link.url + path_args
     else
-      redirect_to root_url, :flash => { :error => 'Link not found!' }
+      redirect_to new_link_url(short_name: short_name), :flash => { :error => 'Link not found! Create it?' }
     end
   end
 
