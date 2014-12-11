@@ -5,6 +5,7 @@ defaults: &defaults
   url_max_length: 4096
   comments_max_length: 100
   contact_email: <%= ENV['CONTACT_EMAIL'] %>
+  canonical_host: <%= ENV['CANONICAL_HOST'] %>
   index_view:
     url_max_length: 100
     comments_max_length: 50
