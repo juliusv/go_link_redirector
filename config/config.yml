@@ -1,16 +1,16 @@
 defaults: &defaults
-  organization_domain: 'myorganization.com'
-  organization_name: 'MyOrganization'
+  organization_domain: <%= ENV['ORGANIZATION_DOMAIN'] %>
+  organization_name: <%= ENV['ORGANIZATION_NAME'] %>
   short_name_max_length: 40
   url_max_length: 4096
   comments_max_length: 100
-  contact_email: 'techsupport@myorganization.com'
+  contact_email: <%= ENV['CONTACT_EMAIL'] %>
   index_view:
     url_max_length: 100
     comments_max_length: 50
   google_oauth2:
-    client_id: 'DUMMY_CLIENT_ID'
-    client_secret: 'DUMMY_CLIENT_SECRET'
+    client_id: <%= ENV['OAUTH2_CLIENT_ID'] %>
+    client_secret: <%= ENV['OAUTH2_CLIENT_SECRET'] %>
 
 
 development:

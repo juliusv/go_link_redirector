@@ -19,7 +19,7 @@ gem 'jquery-rails'
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'rb-readline'
+  gem 'dotenv-rails'
 end
 
 group :development, :test, :migration do
