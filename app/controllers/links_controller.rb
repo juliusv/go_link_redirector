@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-  before_filter :signed_in_user
+  before_filter :signed_in_user, except: [:index, :show, :redirect]
 
   # GET /links
   # GET /links.json
