@@ -7,11 +7,11 @@ describe 'Link pages' do
   subject { page }
 
   describe 'signed out' do
-    describe 'index' do
-      before { visit root_url }
+    describe 'new' do
+      before { visit new_link_path }
 
       it { should have_link('Sign in with Google', href: '/auth/google_oauth2') }
-      it { should_not have_content('link_1') }
+      it { should_not have_content('New Link') }
     end
 
     describe 'follow link' do
@@ -19,7 +19,7 @@ describe 'Link pages' do
 
       before { visit "/#{link.short_name}" }
 
-      specify { current_path.should == signin_path }
+      specify { current_url.should == 'http://www.example-1.org/' }
     end
   end
 
